@@ -50,6 +50,9 @@ jobs:
               run: |
                 make -j$(nproc) V=s || \
                 make V=s
+                
+            - name: TAR the packages
+              run: tar -czvf bin/targets/ipq807x/generic/packages.tar.gz bin/targets/ipq807x/generic/packages && rm -rf bin/targets/ipq807x/generic/packages
 
             - name: TAR output
               run: tar -cvf ipq807xx-images.tar bin/targets/ipq807x/generic
